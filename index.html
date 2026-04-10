@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTERFACE :: A Nation Without Website</title>
+    <title>INTERFACE :: A Nation Without A Website</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="assets/flag.svg">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
 </head>
 <body>
-    <div class="atlas-container">
-        
-        <!-- Cartographic Plate -->
-        <div class="plate-wrapper">
-            <object data="assets/map-plate.svg" type="image/svg+xml" class="atlas-map" id="atlas-map"></object>
+    <div class="globe-container">
+        <div class="cartouche">
+            <h1>INTERFACE</h1>
+            <p>A Nation Without A Website</p>
         </div>
-
-        <!-- Status Bar -->
-        <div class="cartographic-status" id="cartographic-status">
-            <span id="status-text">🗺️ Awaiting cartographic selection...</span>
+        
+        <div class="globe-wrapper">
+            <svg id="globe"></svg>
+        </div>
+        
+        <div class="status-bar">
+            <span id="status-text">🗺️ Awaiting territorial selection...</span>
             <span id="coordinates">0° 0' 0" N, 0° 0' 0" W</span>
         </div>
-
-        <!-- Portal Overlay -->
-        <div class="portal-overlay" id="portal-overlay">
-            <div class="portal-window">
-                <button class="portal-close" id="portal-close">×</button>
-                <div class="portal-header">
-                    <h2 id="portal-title">Territory Name</h2>
-                    <p id="portal-description">Description of this sovereign territory.</p>
-                </div>
-                <div class="portal-links" id="portal-links">
-                    <!-- Links will be populated dynamically -->
-                </div>
-                <div class="portal-footer">
-                    Form I-404 :: Application for Non-Existent Space
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <script src="script.js"></script>
+    <!-- Portal Overlay -->
+    <div class="portal-overlay" id="portal-overlay">
+        <div class="portal-window">
+            <button class="portal-close" id="portal-close">×</button>
+            <div class="portal-header">
+                <h2 id="portal-title">Territory Name</h2>
+                <p id="portal-description">Description of this sovereign territory.</p>
+            </div>
+            <div class="portal-links" id="portal-links"></div>
+            <div class="portal-footer">Form I-404 :: Application for Non-Existent Space</div>
+        </div>
+    </div>
+
+    <script src="globe.js"></script>
 </body>
 </html>
