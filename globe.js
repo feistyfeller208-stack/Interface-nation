@@ -12,21 +12,21 @@ const territories = {
         name: 'Soft Doom Expanse',
         description: 'Where things end gently. Failed projects decompose into fertilizer.',
         links: [
-            { text: '→ View the Ruins', url: 'https://github.com/YOUR_USERNAME' }
+            { text: '→ View the Ruins', url: 'https://github.com/feistyfeller208-stack' }
         ]
     },
     'concrete-cloud': {
         name: 'Concrete & Cloud Prefecture',
         description: 'The administrative center. Clean interfaces. Professional portfolio.',
         links: [
-            { text: '→ Enter Prefecture', url: '#' }
+            { text: '→ Enter Prefecture', https://github.com/feistyfeller208-stack: '#' }
         ]
     },
     'candy-wrapper': {
         name: 'Candy Wrapper Badlands',
         description: 'Sticky. Disposable. Delicious. Side projects and experiments.',
         links: [
-            { text: '→ Unwrap Territory', url: '#' }
+            { text: '→ Unwrap Territory', https://github.com/feistyfeller208-stack: '#' }
         ]
     },
     'silent-transit': {
@@ -41,7 +41,7 @@ const territories = {
         description: 'Sovereignty requires paperwork. Form I-404 required.',
         links: [
             { text: '→ Request Status', url: '#' },
-            { text: '→ Contact', url: 'mailto:your@email.com' }
+            { text: '→ Contact', url: 'mailto:guyfei208@gmail.com' }
         ]
     }
 };
