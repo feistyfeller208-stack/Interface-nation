@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INTERFACE :: A Nation Without A Website</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/flag.svg">
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v4.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
 </head>
 <body>
     <div class="globe-container">
@@ -21,7 +20,7 @@
         </div>
         
         <div class="status-bar">
-            <span id="status-text">🗺️ Awaiting territorial selection...</span>
+            <span id="status-text">🗺️ Initializing cartographic engine...</span>
             <span id="coordinates">0° 0' 0" N, 0° 0' 0" W</span>
         </div>
     </div>
@@ -40,5 +39,6 @@
     </div>
 
     <script src="globe.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
