@@ -1,4 +1,4 @@
-# INTERFACE: A NATION WITHOUT WEBSITE
+# INTERFACE: A NATION WITHOUT A WEBSITE
 
 > *A nation without a website is a nation without a border.*
 
