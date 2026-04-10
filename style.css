@@ -1,0 +1,265 @@
+/* ============================================ */
+/* INTERFACE :: Cartographic Styles             */
+/* A Nation Without Website                     */
+/* ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1410;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    padding: 24px;
+    /* Visible cursor - compass style */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%233D2B1F" stroke-width="0.8"/><line x1="12" y1="2" x2="12" y2="22" stroke="%233D2B1F" stroke-width="0.5"/><line x1="2" y1="12" x2="22" y2="12" stroke="%233D2B1F" stroke-width="0.5"/><polygon points="12,3 14,11 12,10 10,11" fill="%233D2B1F" opacity="0.6"/></svg>') 12 12, crosshair;
+}
+
+/* Atlas Container */
+.atlas-container {
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Plate Wrapper - Like a real atlas page */
+.plate-wrapper {
+    background: #D4C4A8;
+    padding: 24px;
+    box-shadow: 
+        0 0 0 1px #3D2B1F,
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+/* The Map SVG */
+.atlas-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #3D2B1F;
+    background: #D4C4A8;
+}
+
+/* Status Bar - Fixed at bottom */
+.cartographic-status {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #D4C4A8;
+    border-top: 1px solid #3D2B1F;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14px;
+    color: #3D2B1F;
+    z-index: 100;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#status-text {
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+#coordinates {
+    font-family: monospace;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Portal Overlay */
+.portal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 20, 16, 0.95);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: portalFade 0.3s ease-out;
+    /* Reset cursor for overlay */
+    cursor: default;
+}
+
+.portal-overlay.active {
+    display: flex;
+}
+
+.portal-window {
+    background: #D4C4A8;
+    border: 2px solid #3D2B1F;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 
+        0 0 0 1px #8B7355,
+        0 20px 40px rgba(0, 0, 0, 0.5);
+    /* Visible cursor inside window */
+    cursor: default;
+}
+
+.portal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #3D2B1F;
+    font-size: 32px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.portal-close:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.portal-header {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #8B7355;
+}
+
+#portal-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #3D2B1F;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+#portal-description {
+    font-size: 16px;
+    color: #5C4033;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.portal-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.portal-link {
+    display: block;
+    padding: 16px 20px;
+    background: transparent;
+    border: 1px solid #3D2B1F;
+    color: #3D2B1F;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.portal-link:hover {
+    background: #3D2B1F;
+    color: #D4C4A8;
+    cursor: pointer;
+}
+
+.portal-footer {
+    text-align: center;
+    font-size: 11px;
+    color: #8B7355;
+    font-style: italic;
+    letter-spacing: 2px;
+    padding-top: 16px;
+    border-top: 1px solid #8B7355;
+}
+
+/* Animations */
+@keyframes portalFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scrollbar - Matches the aesthetic */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #D4C4A8;
+    border-left: 1px solid #8B7355;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3D2B1F;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5C4033;
+}
+
+/* Territory hover state (applied via JS) */
+.atlas-map .territory {
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.atlas-map .territory:hover {
+    filter: brightness(1.05) drop-shadow(0 0 6px rgba(69, 162, 158, 0.3));
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+    
+    .plate-wrapper {
+        padding: 12px;
+    }
+    
+    .cartographic-status {
+        padding: 8px 16px;
+        font-size: 12px;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+    
+    .portal-window {
+        padding: 24px;
+    }
+    
+    #portal-title {
+        font-size: 22px;
+    }
+}
