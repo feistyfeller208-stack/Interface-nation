@@ -25,22 +25,22 @@ const regions = {
         name: 'The Soft Doom Expanse',
         description: 'Where things end gently. Failed projects go here to decompose into fertilizer.',
         links: [
-            { text: 'View the Ruins', url: 'https://github.com/YOUR_USERNAME' }
+            { text: 'View the Ruins', url: 'https://github.com/feistyfeller208-stack' }
         ]
     },
     'concrete-cloud': {
         name: 'The Concrete & Cloud Prefecture',
         description: 'The administrative center. Mortals are permitted here. Client work and professional builds.',
         links: [
-            { text: 'Enter Prefecture', url: '#' },
-            { text: 'View Portfolio', url: '#' }
+            { text: 'Enter Prefecture', https://github.com/feistyfeller208-stack/BizBook: '#' },
+            { text: 'View Portfolio', https://github.com/feistyfeller208-stack/BizBook: '#' }
         ]
     },
     'candy-wrapper': {
         name: 'The Candy Wrapper Badlands',
         description: 'Sticky. Disposable. Delicious. Temporary shelters for bright ideas and side projects.',
         links: [
-            { text: 'Unwrap', url: '#' }
+            { text: 'Unwrap', https://github.com/feistyfeller208-stack/Lancaster: '#' }
         ]
     },
     'silent-transit': {
@@ -48,15 +48,15 @@ const regions = {
         description: 'The place between places. Raw code. Repositories. Fork the path and leave.',
         links: [
             { text: 'GitHub', url: 'https://github.com/YOUR_USERNAME' },
-            { text: 'View Source', url: 'https://github.com/YOUR_USERNAME/interface-nation' }
+            { text: 'View Source', url: 'https://github.com/feistyfeller208-stack/interface-nation' }
         ]
     },
     'embassy': {
         name: 'Embassy Row',
         description: 'Sovereignty is granted only to those who fill out the proper forms in triplicate.',
         links: [
-            { text: 'Request Territorial Status', url: '#' },
-            { text: 'Diplomatic Channels', url: 'mailto:your@email.com' }
+            { text: 'Request Territorial Status', https://github.com/feistyfeller208-stack/Boom-pixel: '#' },
+            { text: 'Diplomatic Channels', url: 'mailto:guyfei208@gmail.com' }
         ]
     }
 };
