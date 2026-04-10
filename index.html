@@ -3,104 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTERFACE :: A Nation Without A Website</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>INTERFACE :: A Nation Without Website</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="assets/flag.svg">
 </head>
 <body>
-    <div class="cartouche">
-        <h1 class="nation-title">INTERFACE</h1>
-        <p class="subtitle">A Nation Without A Website</p>
-    </div>
+    <div class="atlas-container">
+        
+        <!-- Cartographic Plate -->
+        <div class="plate-wrapper">
+            <object data="assets/map-plate.svg" type="image/svg+xml" class="atlas-map" id="atlas-map"></object>
+        </div>
 
-    <div class="map-container">
-        <svg class="half-curve" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
-            <!-- The Half-Curve Arc -->
-            <path class="curve-line" d="M 100 500 Q 600 100 1100 500" fill="none" stroke="#45A29E" stroke-width="1.5" stroke-dasharray="4 8" />
-            
-            <!-- Region: Soft Doom Expanse -->
-            <g class="region" data-portal="soft-doom" transform="translate(180, 420)">
-                <path class="territory" d="M 0,0 C 20,-40 60,-50 80,-30 C 100,-10 90,20 60,30 C 30,40 10,20 0,0 Z" />
-                <text class="region-label" x="40" y="5">Soft Doom</text>
-                <g class="flag-mini" transform="translate(15, -25) scale(0.4)">
-                    <rect x="0" y="0" width="20" height="12" fill="#0B0C10" />
-                    <rect x="7" y="0" width="6" height="12" fill="#45A29E" />
-                    <rect x="13" y="0" width="7" height="12" fill="#F3EED9" />
-                </g>
-            </g>
+        <!-- Status Bar -->
+        <div class="cartographic-status" id="cartographic-status">
+            <span id="status-text">🗺️ Awaiting cartographic selection...</span>
+            <span id="coordinates">0° 0' 0" N, 0° 0' 0" W</span>
+        </div>
 
-            <!-- Region: Concrete & Cloud -->
-            <g class="region" data-portal="concrete-cloud" transform="translate(380, 380)">
-                <path class="territory" d="M 0,0 C 30,-50 90,-40 100,-10 C 110,20 70,40 40,30 C 10,20 -10,10 0,0 Z" />
-                <text class="region-label" x="50" y="5">Concrete & Cloud</text>
-                <g class="flag-mini" transform="translate(25, -35) scale(0.4)">
-                    <rect x="0" y="0" width="20" height="12" fill="#0B0C10" />
-                    <rect x="7" y="0" width="6" height="12" fill="#45A29E" />
-                    <rect x="13" y="0" width="7" height="12" fill="#F3EED9" />
-                </g>
-            </g>
-
-            <!-- Region: Candy Wrapper -->
-            <g class="region" data-portal="candy-wrapper" transform="translate(580, 360)">
-                <path class="territory" d="M 0,0 C 15,-30 45,-50 70,-30 C 95,-10 80,25 50,30 C 20,35 -10,15 0,0 Z" />
-                <text class="region-label" x="35" y="5">Candy Wrapper</text>
-                <g class="flag-mini" transform="translate(20, -40) scale(0.4)">
-                    <rect x="0" y="0" width="20" height="12" fill="#0B0C10" />
-                    <rect x="7" y="0" width="6" height="12" fill="#45A29E" />
-                    <rect x="13" y="0" width="7" height="12" fill="#F3EED9" />
-                </g>
-            </g>
-
-            <!-- Region: Silent Transit -->
-            <g class="region" data-portal="silent-transit" transform="translate(780, 400)">
-                <path class="territory" d="M 0,0 C 25,-45 65,-35 80,-10 C 95,15 60,35 30,30 C 0,25 -10,10 0,0 Z" />
-                <text class="region-label" x="40" y="5">Silent Transit</text>
-                <g class="flag-mini" transform="translate(20, -35) scale(0.4)">
-                    <rect x="0" y="0" width="20" height="12" fill="#0B0C10" />
-                    <rect x="7" y="0" width="6" height="12" fill="#45A29E" />
-                    <rect x="13" y="0" width="7" height="12" fill="#F3EED9" />
-                </g>
-            </g>
-
-            <!-- Region: Embassy Row -->
-            <g class="region" data-portal="embassy" transform="translate(950, 430)">
-                <path class="territory" d="M 0,0 C 15,-30 40,-40 60,-25 C 80,-10 75,20 45,30 C 15,40 -5,20 0,0 Z" />
-                <text class="region-label" x="30" y="5">Embassy Row</text>
-                <g class="flag-mini" transform="translate(15, -35) scale(0.4)">
-                    <rect x="0" y="0" width="20" height="12" fill="#0B0C10" />
-                    <rect x="7" y="0" width="6" height="12" fill="#45A29E" />
-                    <rect x="13" y="0" width="7" height="12" fill="#F3EED9" />
-                </g>
-            </g>
-        </svg>
-    </div>
-
-    <!-- The Compass Rose (Cursor Follower) -->
-    <div class="compass" id="compass">
-        <svg width="40" height="40" viewBox="0 0 40 40">
-            <circle cx="20" cy="20" r="18" fill="none" stroke="#45A29E" stroke-width="0.5" />
-            <line x1="20" y1="2" x2="20" y2="38" stroke="#45A29E" stroke-width="0.5" />
-            <line x1="2" y1="20" x2="38" y2="20" stroke="#45A29E" stroke-width="0.5" />
-            <polygon points="20,4 24,18 20,16 16,18" fill="#45A29E" opacity="0.6" />
-            <polygon points="20,36 16,22 20,24 24,22" fill="#F3EED9" opacity="0.3" />
-        </svg>
-    </div>
-
-    <div class="status-bar">
-        <span id="status-text">Awaiting territorial selection...</span>
-        <span class="coordinates" id="coordinates">0° 0' 0" N, 0° 0' 0" W</span>
-    </div>
-
-    <!-- The Portal Overlay (Hidden by default) -->
-    <div class="portal-overlay" id="portal-overlay">
-        <div class="portal-content">
-            <button class="close-portal" id="close-portal">×</button>
-            <div id="portal-content-inner">
-                <!-- Dynamic content loads here -->
+        <!-- Portal Overlay -->
+        <div class="portal-overlay" id="portal-overlay">
+            <div class="portal-window">
+                <button class="portal-close" id="portal-close">×</button>
+                <div class="portal-header">
+                    <h2 id="portal-title">Territory Name</h2>
+                    <p id="portal-description">Description of this sovereign territory.</p>
+                </div>
+                <div class="portal-links" id="portal-links">
+                    <!-- Links will be populated dynamically -->
+                </div>
+                <div class="portal-footer">
+                    Form I-404 :: Application for Non-Existent Space
+                </div>
             </div>
         </div>
+
     </div>
 
-    <script src="scripts/map.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
